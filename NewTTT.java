@@ -91,13 +91,13 @@ public class NewTTT {
     entry30 = scan.nextInt();
     entry2 = entry30-1;
     scan.nextLine();
-    isNumeric = true;//numeric value entered, so break the while loop
+    isNumeric = true;
     
        }
        catch(InputMismatchException e){
        
        System.out.println("Invalid character found. Please enter numeric values only!");
-       scan.nextLine();//Advance the scanner // Stops the buffering(per youtube video)
+       scan.nextLine();
            
        }
    }
@@ -168,7 +168,7 @@ public class NewTTT {
    
     } catch(InputMismatchException e) {
         System.out.println("Invalid character found. Please enter numeric values only!");
-     scan.nextLine();//Advance the scanner // Stops the buffering(per youtube video)
+     scan.nextLine();
   }
     
  }
