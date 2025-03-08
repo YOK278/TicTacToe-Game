@@ -4,6 +4,7 @@
  */
 
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -17,6 +18,7 @@ public class NewTTT {
     static String[][]table = new String[3][3];
     static int countX;
     static int countO; 
+    
     
     public static void checkDiagonalRightToLeft(){
 
@@ -70,16 +72,35 @@ public class NewTTT {
     
     public static void main(String[] args) {
     System.out.println("Welcome to TicTacToe Game");
-    System.out.println("Please enter a row number and a column number on separate lines to insert your input");
+    System.out.println("Please enter a row number and a column number on separate lines to insert your input (row first)");
     System.out.println("Note: Table size is 3 x 3");
     while(countX<3 && countO<3){
-    System.out.println("Player 1's turn, you're' 'X'");
+    System.out.println("Player 1's turn, you're 'X'");
     Scanner scan = new Scanner(System.in);
-    int entry20 = scan.nextInt();
-    int entry1 = entry20-1;
-    int entry30 = scan.nextInt();
-    int entry2 = entry30-1;
+   boolean isNumeric = false;
+    int entry20 = 0;
+    int entry1 = 0;
+    int entry30 = 0;
+    int entry2 = 0; 
+  
+   while(!isNumeric){
+       try{
+         
+    entry20 = scan.nextInt();
+    entry1 = entry20-1;
+    entry30 = scan.nextInt();
+    entry2 = entry30-1;
+    scan.nextLine();
+    isNumeric = true;//numeric value entered, so break the while loop
     
+       }
+       catch(InputMismatchException e){
+       
+       System.out.println("Invalid character found. Please enter numeric values only!");
+       scan.nextLine();//Advance the scanner // Stops the buffering(per youtube video)
+           
+       }
+   }
     
      
      while((entry1 > 2 || entry1 <0) || (entry2 > 2 || entry2<0) ){
@@ -88,7 +109,8 @@ public class NewTTT {
      entry1 = entry3-1;
      int entry4 = scan.nextInt();
      entry2 = entry4-1;
-     }
+     
+  }
      
      while(table[entry1][entry2]=="X" || table[entry1][entry2]=="O"){
      System.out.println("Field is already occupied as " + table[entry1][entry2] + "'");  
@@ -96,6 +118,13 @@ public class NewTTT {
      entry1 = entry5-1;
      int entry6 = scan.nextInt();
      entry2 = entry6-1;
+     while((entry1 > 2 || entry1 <0) || (entry2 > 2 || entry2<0) ){
+     System.out.println("Please enter a value within the range");
+     int entry3 = scan.nextInt();
+     entry1 = entry3-1;
+     int entry4 = scan.nextInt();
+     entry2 = entry4-1;
+     }
     }
     table[entry1][entry2]="X";
     
@@ -120,11 +149,30 @@ public class NewTTT {
     break;
     }
     System.out.println("Player 2's turn, you're 'O'");
-    int entry40 = scan.nextInt();
-    int entry7 = entry40-1;
-    int entry50 = scan.nextInt();
-    int entry8 = entry50-1;
+    
+    boolean isNumeric2 = false;
+    
+    int entry40 = 0;
+    int entry7 = 0;
+    int entry50 = 0;
+    int entry8 = 0;
+    
+    while(!isNumeric2){
+    try{
+    entry40 = scan.nextInt();
+    entry7 = entry40-1;
+    entry50 = scan.nextInt();
+    entry8 = entry50-1;
+   scan.nextLine();
+   isNumeric2 = true;
    
+    } catch(InputMismatchException e) {
+        System.out.println("Invalid character found. Please enter numeric values only!");
+     scan.nextLine();//Advance the scanner // Stops the buffering(per youtube video)
+  }
+    
+ }
+    
     while((entry7 > 2 || entry7<0 ) || (entry8 > 2 || entry8<0 )){
      System.out.println("Please enter a value within the range");
      int entry9 = scan.nextInt();
@@ -139,7 +187,17 @@ public class NewTTT {
      entry7 = entry11-1;
      int entry12 = scan.nextInt();
      entry8 = entry12-1;
+     while((entry7 > 2 || entry7<0 ) || (entry8 > 2 || entry8<0 )){
+     System.out.println("Please enter a value within the range");
+     int entry9 = scan.nextInt();
+     entry7 = entry9-1;
+     int entry10 = scan.nextInt();
+     entry8 = entry10-1;
+     }
+     
     }
+    
+    
     
      table[entry7][entry8]="O";
      checkDiagonalRightToLeft();  
