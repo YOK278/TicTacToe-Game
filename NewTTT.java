@@ -95,7 +95,7 @@ public class NewTTT {
        }
        catch(InputMismatchException e){
        
-       System.out.println("Invalid character found. Please enter numeric values only!");
+       System.out.println("Invalid character found. Please enter integer values only!");
        scan.nextLine();
            
        }
@@ -121,7 +121,7 @@ public class NewTTT {
      }
        catch(InputMismatchException e){
        
-       System.out.println("Invalid character found. Please enter numeric values only!");
+       System.out.println("Invalid character found. Please enter integer values only!");
        scan.nextLine();
            
        }
@@ -146,7 +146,7 @@ public class NewTTT {
      }
      catch(InputMismatchException e){
        
-       System.out.println("Invalid character found. Please enter numeric values only!");
+       System.out.println("Invalid character found. Please enter integer values only!");
        scan.nextLine();
        
        }
@@ -169,7 +169,7 @@ public class NewTTT {
      }
        catch(InputMismatchException e){
        
-       System.out.println("Invalid character found. Please enter numeric values only!");
+       System.out.println("Invalid character found. Please enter integer values only!");
        scan.nextLine();
            
        }
@@ -216,7 +216,7 @@ public class NewTTT {
     isNumeric2 = true;
    
     } catch(InputMismatchException e) {
-        System.out.println("Invalid character found. Please enter numeric values only!");
+        System.out.println("Invalid character found. Please enter integer values only!");
      scan.nextLine();
   }
     
@@ -239,7 +239,7 @@ public class NewTTT {
      isNumeric2 = true;
      }
      catch(InputMismatchException e) {
-        System.out.println("Invalid character found. Please enter numeric values only!");
+        System.out.println("Invalid character found. Please enter integer values only!");
      scan.nextLine();
       }
      }
@@ -262,7 +262,7 @@ public class NewTTT {
      isNumeric2 = true;
      }
       catch(InputMismatchException e) {
-        System.out.println("Invalid character found. Please enter numeric values only!");
+        System.out.println("Invalid character found. Please enter integer values only!");
      scan.nextLine();
       }
      }
@@ -282,7 +282,7 @@ public class NewTTT {
      isNumeric2 = true;
      }
      catch(InputMismatchException e) {
-        System.out.println("Invalid character found. Please enter numeric values only!");
+        System.out.println("Invalid character found. Please enter integer values only!");
      scan.nextLine();
       }
      }
